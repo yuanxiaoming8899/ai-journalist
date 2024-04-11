@@ -1,58 +1,48 @@
-# AI-Journalist
-[![Twitter Follow](https://img.shields.io/twitter/follow/mattshumer_?style=social)](https://twitter.com/mattshumer_)
-
-# Claude-Journalist | An experimental AI-powered journalist
-
-Claude-Journalist leverages the power of the Claude 3 AI model to research, write, and edit high-quality articles on any given topic. It utilizes web search APIs to gather relevant information, analyzes the content, and generates well-structured, informative, and engaging articles that read as if they could be published in major media publications.
-
-## Try it without code!
-If you want to try the AI journalist, but don't want to bother with code, you can use a modified version directly on the [HyperWrite Platform](https://app.hyperwriteai.com/personalassistant/tool/183607bc-a92d-4d7b-9b7d-358b4758b2c0). If you're a first-time user, you will be asked to sign in. Once you do so, come back and click this link again to go directly to the tool.
-
-## Workflow
-
-- Prompts the user to enter a topic to write about
-- Generates a list of search terms related to the topic using Claude 3 Haiku
-- Performs searches using the SERP API for each search term
-- Asks Claude to select the most relevant and informative URLs from the search results
-- Retrieves the article text from the selected URLs using the `newspaper3k` library
-- Asks Claude to write a high-quality article based on the retrieved article texts
-- Asks an editor (Claude) to review the article and provide suggestions for improvement
-- Asks the editor (Claude) to rewrite the article based on the suggestions
-- Prints the generated article and the edited article
-
-## Requirements
-
-To run Claude-Journalist, you need:
-- An Anthropic API key for accessing the Claude AI model
-- A SERP API key for performing web searches
-
-## Usage
-
-1. Open the `claude_journalist.ipynb` notebook in Google Colab or Jupyter Notebook.
-2. Replace the placeholders for `ANTHROPIC_API_KEY` and `SERP_API_KEY` in the notebook with your respective API keys.
-3. Run the notebook cells sequentially to execute the code.
-4. When prompted, enter the topic you want to write an article about.
-5. Wait for the AI system to research, write, and edit the article.
-
-## Disclaimer
-
-Claude-Journalist is an experimental tool designed to assist in the article writing process. While it aims to generate high-quality content, the output should be carefully reviewed and fact-checked by human editors before any publication. The generated articles may require further editing and refinement to meet specific editorial standards and guidelines.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-Some known improvement areas:
-- Enhance the search result filtering and selection process
-- Implement additional fact-checking and verification mechanisms
-- Optimize the article structure and formatting
-
-## Contact
-
-Matt Shumer - [@mattshumer_](https://twitter.com/mattshumer_)
-
-Lastly, if you want to try something even cooler than this, sign up for [HyperWrite Personal Assistant](https://app.hyperwriteai.com/personalassistant). It's basically an AI with access to real-time information that a) is incredible at writing naturally, and b) can operate your web browser to complete tasks for you.
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">人工智能记者</font></font></h1><a id="user-content-ai-journalist" class="anchor" aria-label="永久链接：人工智能记者" href="#ai-journalist"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://twitter.com/mattshumer_" rel="nofollow"><img src="https://camo.githubusercontent.com/548439b042e6aab9c15668ef23bb94abaed79b24d980f3e611e1c19c96ab2486/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f6d6174747368756d65725f3f7374796c653d736f6369616c" alt="推特关注" data-canonical-src="https://img.shields.io/twitter/follow/mattshumer_?style=social" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">克劳德-记者|一位实验性的人工智能记者</font></font></h1><a id="user-content-claude-journalist--an-experimental-ai-powered-journalist" class="anchor" aria-label="永久链接：克劳德记者 |一位实验性的人工智能记者" href="#claude-journalist--an-experimental-ai-powered-journalist"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Claude-Journalist 利用 Claude 3 AI 模型的强大功能来研究、撰写和编辑任何给定主题的高质量文章。它利用网络搜索 API 来收集相关信息、分析内容并生成结构良好、信息丰富且引人入胜的文章，这些文章读起来就像可以在主要媒体出版物上发布一样。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">无需代码即可尝试！</font></font></h2><a id="user-content-try-it-without-code" class="anchor" aria-label="永久链接：无需代码即可尝试！" href="#try-it-without-code"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果你想尝试AI记者，但又不想操心代码，可以直接在</font></font><a href="https://app.hyperwriteai.com/personalassistant/tool/183607bc-a92d-4d7b-9b7d-358b4758b2c0" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HyperWrite Platform</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上使用修改后的版本。如果您是首次使用，系统会要求您登录。登录后，返回并再次单击此链接即可直接转到该工具。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">工作流程</font></font></h2><a id="user-content-workflow" class="anchor" aria-label="永久链接：工作流程" href="#workflow"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提示用户输入要撰写的主题</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 Claude 3 Haiku 生成与该主题相关的搜索词列表</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 SERP API 对每个搜索词执行搜索</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要求 Claude 从搜索结果中选择最相关、信息最丰富的 URL</font></font></li>
+<li><font style="vertical-align: inherit;"></font><code>newspaper3k</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用库</font><font style="vertical-align: inherit;">从选定的 URL 检索文章文本</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要求 Claude 根据检索到的文章文本写一篇高质量的文章</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要求编辑（Claude）审阅文章并提供改进建议</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要求编辑（Claude）根据建议重写文章</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">打印生成的文章和编辑的文章</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要求</font></font></h2><a id="user-content-requirements" class="anchor" aria-label="永久链接：要求" href="#requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要运行 Claude-Journalist，您需要：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用于访问 Claude AI 模型的 Anthropic API 密钥</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用于执行网络搜索的 SERP API 密钥</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用法</font></font></h2><a id="user-content-usage" class="anchor" aria-label="永久链接：用法" href="#usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"></font><code>claude_journalist.ipynb</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Google Colab 或 Jupyter Notebook 中</font><font style="vertical-align: inherit;">打开笔记本。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将笔记本中</font></font><code>ANTHROPIC_API_KEY</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font><font style="vertical-align: inherit;">的占位符替换为您各自的 API 密钥。</font></font><code>SERP_API_KEY</code><font style="vertical-align: inherit;"></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">按顺序运行笔记本单元以执行代码。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">出现提示时，输入您要撰写文章的主题。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">等待AI系统研究、撰写、编辑文章。</font></font></li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">免责声明</font></font></h2><a id="user-content-disclaimer" class="anchor" aria-label="永久链接：免责声明" href="#disclaimer"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Claude-Journalist 是一个实验性工具，旨在协助文章写作过程。虽然它的目标是生成高质量的内容，但在发布之前应由人类编辑仔细审查和事实核查输出。生成的文章可能需要进一步编辑和细化，以满足特定的编辑标准和指南。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2><a id="user-content-license" class="anchor" aria-label="永久链接：许可证" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="/mshumer/ai-journalist/blob/main/LICENSE"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目根据MIT 许可证</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获得许可</font><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h2><a id="user-content-contributing" class="anchor" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">欢迎贡献！如果您发现任何问题或有改进建议，请提出问题或提交拉取请求。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一些已知的改进领域：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">增强搜索结果过滤和选择过程</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实施额外的事实检查和验证机制</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">优化文章结构和格式</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">接触</font></font></h2><a id="user-content-contact" class="anchor" aria-label="永久链接：联系方式" href="#contact"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">马特舒默 - </font></font><a href="https://twitter.com/mattshumer_" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@mattshumer_</font></font></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最后，如果您想尝试比这更酷的东西，请注册</font></font><a href="https://app.hyperwriteai.com/personalassistant" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HyperWrite Personal Assistant</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。它基本上是一个能够访问实时信息的人工智能，a）能够自然地书写，b）可以操作您的网络浏览器来为您完成任务。</font></font></p>
+</article></div>
